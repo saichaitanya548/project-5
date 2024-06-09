@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Online Movie Ticket Booking</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0e6e6;
+            color: #333;
+            background-image: url("Movie1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header {
+            background-color: #444;
+            color: #f2f2f2;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+            animation: slide 5s infinite;
+        }
+
+        @keyframes slide {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: -100%; }
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+            animation: fadeIn 3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        nav {
+            background-color: #0073e6;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { color: white; }
+            50% { color: yellow; }
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: #ffd700; /* Gold color on hover */
+            transform: scale(1.1);
+        }
+
+        main {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .welcome-section {
+            background-color: rgba(232, 223, 223, 0.8);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            max-width: 850px;
+            margin: 25px auto;
+            animation: popIn 1s ease-out;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .welcome-section h2 {
+            color: #0073e6;
+            text-shadow: 2px 2px #bbb;
+            animation: colorChange 3s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: #0073e6; }
+            50% { color: #ff5733; }
+            100% { color: #0073e6; }
+        }
+
+        .welcome-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .welcome-section a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d72094;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .welcome-section a:hover {
+            background-color: #ff5733;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #444;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        function myfun(){
+            document.write("YOU HAVE LOGGED SUCCESSFULLY!!!!!!!!")
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to MovieMania</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="Loginp.html">Login</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="welcome-section">
+            <h2>Welcome to MovieMania</h2>
+            <p>Your ultimate destination for booking movie tickets online.</p>
+            <p>Discover the latest and greatest movies, find showtimes, and book your tickets with ease.</p>
+            <a href="Loginp.html">Browse Movies</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 MovieMania. All rights reserved.</p>
+    </footer>
+</body>
+</html>

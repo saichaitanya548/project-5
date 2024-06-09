@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        h1 {
+            background-color: aqua;
+            font-style: italic;
+        }
+        body {
+            background-color: azure;
+            background-image: url("pic4.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-size: small;
+            font-style: normal;
+            font-style: italic;
+        }
+        nav {
+            background-color: #eee;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #800000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const fname = document.getElementById("Fname").value;
+            const lname = document.getElementById("Lname").value;
+            const rno = document.getElementById("rno").value;
+            const pswrd = document.getElementById("pswrd").value;
+            const email = document.getElementById("mail").value;
+            const phone = document.getElementById("phno").value;
+
+            if (fname === "" || lname === "" || rno === "" || pswrd === "" || email === "" || phone === "") {
+                alert("Please fill all the provided fields");
+                return false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            if (phone.length !== 10 || isNaN(phone)) {
+                alert("Please enter a valid 10-digit phone number");
+                return false;
+            }
+
+            return true;
+        }
+
+        function playAudio() {
+            const audio = new Audio("file:///C:/Users/91824/Downloads/WhatsApp Audio 2024-05-31 at 5.11.54 AM.mpeg");
+            audio.play();
+            audio.onended = function() {
+                window.location.href = "img.html";
+            };
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            if (validateForm()) {
+                playAudio();
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="Loginp.html">Login</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="Registration.html">Registration</a></li>
+        </ul>
+    </nav>
+    <center>
+        <h1>Welcome To Registration Page</h1>
+        <form onsubmit="handleSubmit(event)">
+            <label for="Fname">First Name:</label>
+            <input type="text" id="Fname" name="Fname" placeholder="FNAME"><br><br>
+            
+            <label for="Lname">Last Name:</label>
+            <input type="text" id="Lname" name="Lname" placeholder="LNAME"><br><br>
+            
+            <label for="rno">Roll Number:</label>
+            <input type="text" id="rno" name="rno" placeholder="RNO"><br><br>
+            
+            <label for="pswrd">Password:</label>
+            <input type="password" id="pswrd" name="pswrd" placeholder="PSWD"><br><br>
+            
+            <label for="mail">Email:</label>
+            <input type="text" id="mail" name="mail" placeholder="EMAIL"><br><br>
+            
+            <label for="phno">Phone Number:</label>
+            <input type="text" id="phno" name="phno" maxlength="10" placeholder="MNO"><br><br>
+            
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="M">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="F">
+            <label for="female">Female</label><br><br>
+            
+            <label for="dob">Date Of Birth:</label>
+            <input type="date" id="dob" name="dob"><br><br>
+            
+            <label>Languages Known:</label>
+            <input type="checkbox" id="telugu" name="language" value="T">
+            <label for="telugu">Telugu</label>
+            <input type="checkbox" id="hindi" name="language" value="H">
+            <label for="hindi">Hindi</label>
+            <input type="checkbox" id="english" name="language" value="E">
+            <label for="english">English</label><br><br>
+            
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </center>
+</body>
+</html>

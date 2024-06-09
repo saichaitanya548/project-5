@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* General Styles */
+        body {
+            background-image: url("pic.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: rgb(84, 13, 25);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-style: italic;
+        }
+
+        nav {
+            background-color: #d6c7c7;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: rgb(98, 44, 44);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: #ff5733;
+            transform: scale(1.1);
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 50px auto;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h3 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .login-container button:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .login-container a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styles for the image display */
+        .image-container {
+            display: none; /* Initially hidden */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            var username = document.forms["loginForm"]["User"].value;
+            var password = document.forms["loginForm"]["pswrd"].value;
+            
+            if (username == "" || username == null) {
+                alert("Username cannot be empty or null.");
+                return false;
+            } 
+            
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+            
+            showImage();
+            return true;
+        }
+
+        function showImage() {
+            var imageContainer = document.getElementById("imageContainer");
+            imageContainer.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Learn MERN</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="Loginp.html">Login</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+    <div class="login-container">
+        <form name="loginForm" onsubmit="validateForm(event)">
+            <h3>Welcome to Login Page</h3>
+            <input type="text" name="User" placeholder="Username"><br>
+            <input type="password" name="pswrd" placeholder="Password"><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="image-container" id="imageContainer">
+            <img src="register.jpg" alt="Login Image">
+        </div>
+    </div>
+</body>
+</html>
